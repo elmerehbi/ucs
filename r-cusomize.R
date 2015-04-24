@@ -1,19 +1,12 @@
 ####################################
-# R environment customization
-# This script is automatically run by another "Ubuntu customization" script.
+## R environment customization script
+# to automate package installation 
 ####################################
-# ChangeLog
-# 2015-02-13 made public
-# 2015-02-28 added more packages
-#
+## To run execute in a terminal:
+# Rscript r-customize.R # depends on R being installed
 ####################################
-# To manually run execute:
-# Rscript r-customize.R # depends on R
-# Warning: Manually running might not install all packages since dependencies might not have been met.
-####################################
-# Other recommended packages by Rstudio's Garrett Grolemund
-# Quick list of useful R packages
-# https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages
+## Some relevant links
+# Rstudio's Quick list of useful R packages: http://bit.ly/useful_R_packages
 ####################################
 
 ## Basic packages
@@ -87,15 +80,15 @@ install.packages("maptools") # for shapefiles
 if (!requireNamespace('rCharts'))
   install_github('ramnathv/rCharts@dev')
 install_github('ramnathv/rMaps')
-install_github("rstudio/leaflet")
 
 # Google Vis
 install.packages("googleVis")
 
-## LeaftletR
+## Leaftlet
 # R package to create interactive web-maps based on the Leaflet JavaScript library
 install.packages("leafletR")
-# install_github('leafletR', 'chgrl')
+# install_github("chgrl/leafletR")
+install_github("rstudio/leaflet") # by Rstudio
 
 
 # Documents
