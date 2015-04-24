@@ -19,6 +19,7 @@
 ## Basic packages
 #################
 install.packages("devtools")
+library(devtools) # to install from source (eg; github)
 install.packages("downloader")
 install.packages("checkpoint")
 install.packages("rJava")
@@ -32,8 +33,8 @@ install.packages("RJSONIO") # also required for "WDI"
 # installs an R interface to the Js DataTables
 # will ask to select a server
 if (!requireNamespace('htmlwidgets') || packageVersion('htmlwidgets') <= '0.3.2')
-  devtools::install_github('ramnathv/htmlwidgets')
-devtools::install_github('rstudio/DT')
+  install_github('ramnathv/htmlwidgets')
+install_github('rstudio/DT')
 
 
 install.packages("xtable")
@@ -55,7 +56,7 @@ install.packages("sqldf") # Manipulate R data frames using SQ
 ## Swirl
 # Learn R, in R. http://swirlstats.com
 install.packages("swirl")
-# devtools::install_github("swirldev/swirl") # latest development version
+# install_github("swirldev/swirl") # latest development version
 
 # Visualization
 ###############
@@ -64,17 +65,17 @@ install.packages("ggvis")
 install.packages("gridExtra")
 # R interface to dygraphs
 if (!requireNamespace('htmlwidgets'))
-  devtools::install_github('ramnathv/htmlwidgets')
-devtools::install_github('rstudio/dygraphs')
+  install_github('ramnathv/htmlwidgets')
+install_github('rstudio/dygraphs')
 
 
 # Shiny Apps
-devtools::install_github('rstudio/shinyapps')
+install_github('rstudio/shinyapps')
 # download("https://github.com/rstudio/shinyapps/archive/master.tar.gz", "shinyapps.tar.gz")
 # install.packages("shinyapps.tar.gz", repos = NULL, type = "source")
 
 # Plotly
-devtools::install_github("ropensci/plotly")
+install_github("ropensci/plotly")
 # download("https://github.com/ropensci/plotly/archive/master.tar.gz", "plotly.tar.gz")
 # install.packages("plotly.tar.gz", repos = NULL, type = "source")
 
@@ -84,9 +85,9 @@ install.packages("maptools") # for shapefiles
 # rMaps (still under development) # https://rmaps.github.io/
 # rCharts required for some (experimental) features
 if (!requireNamespace('rCharts'))
-  devtools::install_github('ramnathv/rCharts@dev')
-devtools::install_github('ramnathv/rMaps')
-devtools::install_github("rstudio/leaflet")
+  install_github('ramnathv/rCharts@dev')
+install_github('ramnathv/rMaps')
+install_github("rstudio/leaflet")
 
 # Google Vis
 install.packages("googleVis")
@@ -94,7 +95,7 @@ install.packages("googleVis")
 ## LeaftletR
 # R package to create interactive web-maps based on the Leaflet JavaScript library
 install.packages("leafletR")
-# devtools::install_github('leafletR', 'chgrl')
+# install_github('leafletR', 'chgrl')
 
 
 # Documents
@@ -103,8 +104,8 @@ install.packages("leafletR")
 install.packages("yaml"); install.packages("htmltools"); install.packages("rmarkdown")
 
 # Slidify & Libraries
-devtools::install_github('ramnathv/slidify')
-devtools::install_github('ramnathv/slidifyLibraries')
+install_github('ramnathv/slidify')
+install_github('ramnathv/slidifyLibraries')
 
 # Spatial & GIS
 ###############
