@@ -20,7 +20,8 @@ install.packages("xlsxjars")
 install.packages("xlsx")
 install.packages("data.table")
 install.packages(c("Hmisc", "jpeg"))
-install.packages("RJSONIO") # also required for "WDI"
+install.packages("RJSONIO") # also required for "WDI" & gist publish in "rCharts"
+install.packages("xtable")
 
 # DataTables see: https://rstudio.github.io/DT/ 
 # installs an R interface to the Js DataTables
@@ -29,8 +30,12 @@ if (!requireNamespace('htmlwidgets') || packageVersion('htmlwidgets') <= '0.3.2'
   install_github('ramnathv/htmlwidgets')
 install_github('rstudio/DT')
 
+# Datasets
+install.packages(c("UsingR", "MASS"))
+# others
+## ISLR: http://www-bcf.usc.edu/~gareth/ISL/data.html
 
-install.packages("xtable")
+
 
 # Web scraping
 ##############
@@ -53,6 +58,8 @@ install.packages("swirl")
 
 # Visualization
 ###############
+install.packages("quadprog") # dependancy for directlabels
+install.packages("directlabels", repo="http://r-forge.r-project.org")
 install.packages("ggplot2")
 install.packages("ggvis")
 install.packages("gridExtra")
@@ -66,6 +73,10 @@ install_github('rstudio/dygraphs')
 install_github('rstudio/shinyapps')
 # download("https://github.com/rstudio/shinyapps/archive/master.tar.gz", "shinyapps.tar.gz")
 # install.packages("shinyapps.tar.gz", repos = NULL, type = "source")
+
+# Radiant - interface for BI in R based on Shiny
+install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
+# library(radiant); radiant("marketing")
 
 # Plotly
 install_github("ropensci/plotly")
@@ -143,4 +154,4 @@ install.packages("oro.dicom")
 ########################################
 ## caret - Classification And REgression Training
 install.packages("caret")
-install.packages("e1071") # needed when fitting a model in caret
+install.packages("e1071") # assorted econometric & ml extensions; needed when fitting a model in caret

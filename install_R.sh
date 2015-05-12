@@ -8,7 +8,7 @@ cd ~/Downloads
 # the enhanced distribution of R from Revolution Analytics.
 # source: http://mran.revolutionanalytics.com/download/#download
 
-dpkg -l make gcc gfortran g++ # to check for packages before intalling
+# dpkg -l make gcc gfortran g++ # to check for packages before intalling
 
 sudo apt-get install make gcc gfortran g++
 wget http://mran.revolutionanalytics.com/install/RRO-8.0.1-Beta3-Ubuntu-14.04.x86_64.tar.gz
