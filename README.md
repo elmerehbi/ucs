@@ -10,15 +10,13 @@ Note: The "install_R.sh" installs Revolution R Open (PRO) instead of the base R.
 #### Usage
 In a terminal,
 
-to install R and packages included in the r script run:
-
+To install R and Ubuntu-specific packages needed for R:
 ```S
 chmod +x install_R.sh
 sudo ./install_R.sh
 ```
 
-If you already have R installed and want to install the R packages only, run:
-
+To install the packages:
 ```S
 Rscript r-customize.R
 ```

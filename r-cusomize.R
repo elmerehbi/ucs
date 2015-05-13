@@ -31,7 +31,7 @@ if (!requireNamespace('htmlwidgets') || packageVersion('htmlwidgets') <= '0.3.2'
 install_github('rstudio/DT')
 
 # Datasets
-install.packages(c("UsingR", "MASS"))
+install.packages(c("UsingR", "MASS", "kernlab", "ISLR"))
 # others
 ## ISLR: http://www-bcf.usc.edu/~gareth/ISL/data.html
 
