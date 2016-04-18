@@ -1,0 +1,210 @@
+## For some reason Rscript doesn't run the lines in order. It keeps jumping from
+# oen package to another.
+####################################
+## R environment customization script
+# to automate package installation 
+####################################
+## To run execute in a terminal:
+# Rscript r-customize.R # depends on R
+# Note: some packages might return an error; this might be due to the mirror you choose.
+####################################
+## Some relevant links
+# Rstudio's Quick list of useful R packages: http://bit.ly/useful_R_packages
+####################################
+
+## Basic packages
+#################
+# install.packages("devtools")
+library(devtools) # to install from source (eg; github)
+# Packrat - dependency management system for R
+if (!require("devtools")) install.packages("devtools")
+	devtools::install_github("rstudio/packrat")
+install.packages("downloader")
+install.packages("checkpoint")
+install.packages("rJava")
+install.packages("xlsxjars")
+install.packages("xlsx")
+install.packages("data.table")
+install.packages(c("Hmisc", "jpeg"))
+install.packages("RJSONIO") # also required for "WDI" & gist publish in "rCharts"
+install.packages("xtable")
+
+# if (!requireNamespace('htmlwidgets') || packageVersion('htmlwidgets') <= '0.3.2')
+#   devtools::install_github('ramnathv/htmlwidgets')
+install.packages("htmlwidgets")
+
+# DataTables see: https://rstudio.github.io/DT/ 
+# installs an R interface to the Js DataTables
+# will ask to select a server
+# devtools::install_github('rstudio/DT')
+install.packages('DT')
+
+# Datasets
+install.packages(c("UsingR", "MASS", "kernlab", "ISLR", "ElemStatLearn", "AppliedPredictiveModeling"))
+# others
+## ISLR: http://www-bcf.usc.edu/~gareth/ISL/data.html
+
+# Web scraping
+##############
+install.packages("XML") # read & create XML docs
+install.packages("rvest") # XML & httr wrappers to make it easy to download & manipulate html & xml.
+install.packages(c("httr", "rjson")) # required for "Rfacebook"
+install.packages("jsonlite")
+install.packages("RCurl")
+
+## Data Wrangling
+#################
+install.packages(c("dplyr", "reshape2"))
+install.packages("tidyr")
+install.packages("sqldf") # Manipulate R data frames using SQ
+
+# pipecomposer - visuals dplyr's magrittr pipelines & when done returns the code
+# https://github.com/jcheng5/pipecomposer
+devtools::install_github("jcheng5/pipecomposer")
+
+## Swirl
+# Learn R, in R. http://swirlstats.com
+install.packages("swirl")
+# install_github("swirldev/swirl") # latest development version
+library(swirl)
+install_from_swirl("R Programming") # The basics of programming in R
+install_from_swirl("R Programming Alt") # Same as the original, but modified slightly for in-class use (see below ***)
+install_from_swirl("Data Analysis") # Basic ideas in statistics and data visualization
+install_from_swirl"(Mathematical Biostatistics Boot Camp)" # One- and two-sample t-tests, power, and sample size
+install_from_swirl("Open Intro") # A very basic introduction to statistics, data analysis, and data visualization
+install_from_swirl("Regression Models") # The basics of regression modeling in R
+install_from_swirl("Getting and Cleaning Data") # dplyr, tidyr, lubridate, oh my!
+install_from_swirl("Statistical Inference") # This intermediate to advanced level course closely follows the Statistical Inference course of the Johns Hopkins Data Science Specialization on Coursera
+
+# # Visualization
+# ###############
+install.packages("manipulate") # easy interactive plots
+install.packages("quadprog") # dependancy for directlabels
+install.packages("directlabels")
+install.packages("ggplot2")
+install.packages("GGally")
+install.packages("ggvis")
+install.packages("gridExtra")
+# R interface to dygraphs
+# if (!requireNamespace('htmlwidgets'))
+#   install_github('ramnathv/htmlwidgets')
+# install_github('rstudio/dygraphs')
+install.packages("dygraphs")
+
+# Shiny Apps
+install_github('rstudio/shinyapps')
+# download("https://github.com/rstudio/shinyapps/archive/master.tar.gz", "shinyapps.tar.gz")
+# install.packages("shinyapps.tar.gz", repos = NULL, type = "source")
+
+# ShinyDashboard - makes it easy to use shiny to create dashboards
+# https://rstudio.github.io/shinydashboard/
+install.packages("shinydashboard")
+
+# Radiant - interface for BI in R based on Shiny
+install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
+# library(radiant); radiant("marketing")
+
+# Plotly
+install.packages("plotly")
+# install_github("ropensci/plotly")
+# # download("https://github.com/ropensci/plotly/archive/master.tar.gz", "plotly.tar.gz")
+# # install.packages("plotly.tar.gz", repos = NULL, type = "source")
+
+install.packages("maptools") # for shapefiles
+# install.packages("rgeos") # required by maptools
+
+# rMaps (still under development) # https://rmaps.github.io/
+# rCharts required for some (experimental) features
+if (!requireNamespace('rCharts'))
+  install_github('ramnathv/rCharts@dev')
+install_github('ramnathv/rMaps')
+
+# Google Vis
+install.packages("googleVis")
+
+## Leaftlet
+# R package to create interactive web-maps based on the Leaflet JavaScript library
+install.packages("leafletR")
+# install_github("chgrl/leafletR")
+install_github("rstudio/leaflet") # by Rstudio
+
+
+# Documents
+###########
+# for Knitr (requires TeX & Pandoc to be installed for PDFs)
+install.packages("yaml", "htmltools", "knitr", "markdown", "rmarkdown")
+
+# Slidify & Libraries
+install_github('ramnathv/slidify')
+install_github('ramnathv/slidifyLibraries')
+
+# Spatial & GIS
+###############
+install.packages("sp") # classes and methods for spatial data
+install.packages("maptools") # Tools for Reading and Handling Spatial Objects
+install.packages("maps") # Draw Geographical Maps
+install.packages("ggmap") # Spatial Visualization with Google Maps and OpenStreetMap
+install.packages("raster")
+install.packages("mapdata")
+install.packages("mapproj")
+install.packages("gpclib")
+install.packages("rdgal")
+install.packages("Rgooglemaps")
+install.packages("rgeos")
+install.packages("rasterVis")
+
+# Connections
+#############
+
+# API's
+install.packages("streamR") # Access to Twitter Streaming API via R # github: https://github.com/pablobarbera/streamR
+install.packages("Rfacebook") # provides an interface to the Facebook API
+
+# Connect to Databases
+install.packages("DBI") # database interface (DBI) definition for communication between R and relational database management systems
+install.packages("RMySQL") # DBI-compliant Interface to MySQL and MariaDB Databases
+install.packages("dbConnect") # Provides a graphical user interface to connect with databases that use MySQL
+# install.packages("rredis") # connection to Redis
+
+# Data scources
+install.packages("Quandl")
+install.packages("WDI") #github.com/vincentarelbundock/WDI
+
+# Signal Processing & Time Series Analysis
+install.packages("signal") # Signal Processing
+install.packages("TSA") # Time Series Analysis + Periodograms
+
+# AnomalyDetection - detect anomalies which is robust, from a statistical standpoint, in the presence of seasonality and an underlying trend
+# https://github.com/twitter/AnomalyDetection
+devtools::install_github("twitter/AnomalyDetection")
+
+# # Interperability with other languages
+# ######################################
+
+# Matlab
+install.packages("R.matlab")
+install_github("schmidtchristoph/reach/reach") # dependency: R.matlab
+
+# # Medical packages
+# ##################
+# install.packages("oro.dicom")
+
+# Big Data & High Performance / Parallel Computing
+##################################################
+# Packages to deal with datasets larger than RAM
+install.packages("bigmemory") # Manage massive matrices with shared memory and memory-mapped files
+install.packages("doParallel") # parallel computing
+# install.packages("toaster") # toaster (to Aster) is a set of tools for computing and analyzing data with Teradata Aster Big Data database
+# brings the power of Teradata Aster's distributed SQL and MapReduce (SQL-MR) to R on desktop and complements analysis of results with a convenient set of plotting functions.
+# github.com/teradata-aster-field/toaster
+
+# Machine Learning & Predictive Modeling
+########################################
+## caret - Classification And REgression Training
+install.packages("caret")
+install.packages("e1071") # assorted econometric & ml extensions (svm); needed when fitting a model in caret
+install.packages("RANN") # required by "predict" & "preProcess" with method "knnImpute"
+install.packages("randomForest")
+install.packages("rattle"); install.packages("rpart.plot")
+install.packages("pgmm"); install.packages("rpart")
+install.packages("tree")
