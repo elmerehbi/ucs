@@ -82,6 +82,12 @@ install.packages("manipulate") # easy interactive plots
 install.packages("quadprog") # dependancy for directlabels
 install.packages("directlabels")
 install.packages("ggplot2")
+# ggsalt - Extra Coordinate Systems, Geoms, Statistical Transformations, Scales & Fonts for 'ggplot2'
+# A compendium of 'geoms', 'coords' and 'stats' for 'ggplot2', including
+# splines, 1d and 2d densities, univariate average shifted histograms and
+# a new map coordinate system based on the 'PROJ.4'-library
+# https://github.com/hrbrmstr/ggalt
+install.packages("ggsalt") 
 install.packages("GGally")
 install.packages("ggvis")
 install.packages("gridExtra")
