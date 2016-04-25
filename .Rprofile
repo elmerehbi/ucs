@@ -8,6 +8,6 @@
     options(
     repos = c(CRAN = "https://cran.rstudio.com/"),
     browserNLdisabled = TRUE,
-    deparse.max.lines = 2), 
-    unzip = 'internal'
+    deparse.max.lines = 2, 
+    unzip = 'internal') # needed for devtools::install_github
 }
