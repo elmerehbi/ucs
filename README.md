@@ -1,25 +1,55 @@
-Ubuntu customization script
-=============================
+# Ubuntu customization script
+---
+(in progress)
 
-The repo aims to automate the process of customizing a freshly installed Ubuntu image.
-Currently it only contains a script to install basic packages of the R statistical programming language. To run it you must have R installed.
+A collection of scripts to automate customizing an Ubuntu desktop.
+So far, it includes installing and customizing the following:
 
-Note: The "install_R.sh" installs Revolution R Open (PRO) instead of the base R.
+* R statistical language
+
+Included scripts (not exhaustive!):
+
+* `install.sh`
+    + `install_r.sh`: installs R language
+        * `.Rprofile`: your custom Rprofile if it exists
+        * `r-customize.R`: installs many R packages
+
+## Prerequisites
+- A working internet connection
+- 'root' access
+
+## How to get it
+  * ### With git
+    - Get list of packages and install git: `sudo apt-get install git`
+    - get the script: `cd ~/Downloads && git clone git://github.com/elmerehbi/ucs`
+
+    (or you can fork the repo & clone it)
+
+  * ### Without git
+    - get & extract the script: `cd ~/Downloads && wget https://github.com/elmerehbi/ucs/tarball/master -O - | tar xz`
+
+## How to use
+
+### Install & customize `R` only
+**Note 1**: make sure to have the repo in the Downloads directory. It is a simple script and not very smart.
+**Note 2**: It installs the [Microsoft R Open (RRO) which is an enhanced distribution of R from Revolution Analytics](http://mran.revolutionanalytics.com/).
 
 
-#### Usage
-In a terminal,
+  - **Install Revolution R Open (PRO) and popular packages**.
 
-To install R and Ubuntu-specific packages needed for R:
+  Note: this will automatically run ` r-customize.R ` install packages.
 ```S
-chmod +x install_R.sh
+chmod +x *.sh
 sudo ./install_R.sh
 ```
 
-To install the packages:
+  - To **install R packages only** (this is already done if you're installing R as instructed above.)
 ```S
 Rscript r-customize.R
 ```
+
+### Rprofile
+The `install_R.sh` script puts `.Rprofile` in your home directory. It is required for installation purposes (to hardcode a CRAN mirror). You may replace it before or after the installation with a custom one.
 
 ### License
 
