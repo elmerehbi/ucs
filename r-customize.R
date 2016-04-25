@@ -3,7 +3,7 @@
 # oen package to another.
 ####################################
 ## R environment customization script
-# to automate package installation 
+# to automate package installation
 ####################################
 ## To run execute in a terminal:
 # Rscript r-customize.R # depends on R
@@ -13,14 +13,14 @@
 # Rstudio's Quick list of useful R packages: http://bit.ly/useful_R_packages
 ####################################
 
-## Basic packages
-#################
-# install.packages("devtools")
-install.packages("checkpoint")
+# ## Basic packages
+# #################
+# # install.packages("devtools" # install CRAN's devtools)
+# devtools::install_github("hadley/devtools") # install development version
+# if (!require("devtools")) install.packages("devtools")
 library(devtools) # to install from source (eg; github)
-# Packrat - dependency management system for R
-if (!require("devtools")) install.packages("devtools")
-	devtools::install_github("rstudio/packrat")
+install.packages("checkpoint")
+install.packages("packrat") # dependency management system for R
 install.packages("downloader")
 install.packages("rJava")
 install.packages("xlsxjars")
@@ -34,7 +34,7 @@ install.packages("xtable")
 #   devtools::install_github('ramnathv/htmlwidgets')
 install.packages("htmlwidgets")
 
-# DataTables see: https://rstudio.github.io/DT/ 
+# DataTables see: https://rstudio.github.io/DT/
 # installs an R interface to the Js DataTables
 # will ask to select a server
 # devtools::install_github('rstudio/DT')
@@ -61,17 +61,17 @@ install.packages("sqldf") # Manipulate R data frames using SQ
 
 # pipecomposer - visuals dplyr's magrittr pipelines & when done returns the code
 # https://github.com/jcheng5/pipecomposer
-devtools::install_github("jcheng5/pipecomposer")
+# devtools::install_github("jcheng5/pipecomposer")
 
 ## Swirl
 # Learn R, in R. http://swirlstats.com
+# devtools::install_github("swirldev/swirl") # latest development version
 install.packages("swirl")
-# install_github("swirldev/swirl") # latest development version
 library(swirl)
 install_from_swirl("R Programming") # The basics of programming in R
-install_from_swirl("R Programming Alt") # Same as the original, but modified slightly for in-class use (see below ***)
+# install_from_swirl("R Programming Alt") # Same as the original, but modified slightly for in-class use (see below ***)
 install_from_swirl("Data Analysis") # Basic ideas in statistics and data visualization
-install_from_swirl"(Mathematical Biostatistics Boot Camp)" # One- and two-sample t-tests, power, and sample size
+install_from_swirl("Mathematical Biostatistics Boot Camp") # One- and two-sample t-tests, power, and sample size
 install_from_swirl("Open Intro") # A very basic introduction to statistics, data analysis, and data visualization
 install_from_swirl("Regression Models") # The basics of regression modeling in R
 install_from_swirl("Getting and Cleaning Data") # dplyr, tidyr, lubridate, oh my!
@@ -90,7 +90,7 @@ install.packages("ggplot2")
 # splines, 1d and 2d densities, univariate average shifted histograms and
 # a new map coordinate system based on the 'PROJ.4'-library
 # https://github.com/hrbrmstr/ggalt
-install.packages("ggsalt") 
+install.packages("ggsalt")
 install.packages("GGally")
 install.packages("ggvis")
 install.packages("gridExtra")
@@ -101,12 +101,12 @@ install.packages("gridExtra")
 install.packages("dygraphs")
 
 # Shiny Apps
-install_github('rstudio/shinyapps')
-# download("https://github.com/rstudio/shinyapps/archive/master.tar.gz", "shinyapps.tar.gz")
-# install.packages("shinyapps.tar.gz", repos = NULL, type = "source")
+# devtools::install_github('rstudio/shinyapps')
+# # download("https://github.com/rstudio/shinyapps/archive/master.tar.gz", "shinyapps.tar.gz")
+# # install.packages("shinyapps.tar.gz", repos = NULL, type = "source")
+install.packages("shiny")
 
-# ShinyDashboard - makes it easy to use shiny to create dashboards
-# https://rstudio.github.io/shinydashboard/
+
 install.packages("shinydashboard")
 
 # flexdashboard - Easy interactive dashboards for R
@@ -138,14 +138,14 @@ install.packages("googleVis")
 ## Leaftlet
 # R package to create interactive web-maps based on the Leaflet JavaScript library
 install.packages("leafletR")
-# install_github("chgrl/leafletR")
-install_github("rstudio/leaflet") # by Rstudio
-
+install_github("chgrl/leafletR")
+# install_github("rstudio/leaflet") # by Rstudio
+install.packages("leaflet")
 
 # Documents
 ###########
 # for Knitr (requires TeX & Pandoc to be installed for PDFs)
-install.packages("yaml", "htmltools", "knitr", "markdown", "rmarkdown")
+install.packages(c("yaml", "htmltools", "knitr", "markdown", "rmarkdown"))
 
 # Slidify & Libraries
 install_github('ramnathv/slidify')
@@ -185,6 +185,7 @@ install.packages("Quandl")
 install.packages("WDI") #github.com/vincentarelbundock/WDI
 
 ## Signal Processing & Time Series Analysis
+###########################################
 install.packages("signal") # Signal Processing
 install.packages("TSA") # Time Series Analysis + Periodograms
 
@@ -201,9 +202,10 @@ install_github("schmidtchristoph/reach/reach") # dependency: R.matlab
 # ######################################
 
 # ## Financial
+#############
 # install.packages("PerformanceAnalytics")
 # install.packages("zoo")
-# install.packages("tseries") 
+# install.packages("tseries")
 
 # # Medical packages
 # ##################
