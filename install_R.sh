@@ -44,9 +44,9 @@ dpkg -l make gcc gfortran g++ # to check for packages before intalling
 sudo apt-get install --yes make gcc gfortran g++ 
 
 cd ~/Downloads
-# wget -O MRO.deb https://mran.revolutionanalytics.com/install/mro/3.2.4/MRO-3.2.4-Ubuntu-15.4.x86_64.deb &&
-# # RevoMath for multi-threading (optional)
-# wget -O MKL.tar.gz https://mran.revolutionanalytics.com/install/mro/3.2.4/RevoMath-3.2.4.tar.gz
+wget -O MRO.deb https://mran.revolutionanalytics.com/install/mro/3.2.4/MRO-3.2.4-Ubuntu-15.4.x86_64.deb &&
+# RevoMath for multi-threading (optional)
+wget -O MKL.tar.gz https://mran.revolutionanalytics.com/install/mro/3.2.4/RevoMath-3.2.4.tar.gz
 sudo dpkg -i MRO.deb
 tar -xzvf MKL.tar.gz
 cd RevoMath && sudo ./RevoMath.sh # requires user input
@@ -59,7 +59,7 @@ wget -O rstudio.deb https://download1.rstudio.org/rstudio-0.99.896-amd64.deb
 sudo dpkg -i rstudio.deb
 
 # Cleaning
-rm -rf MRO.deb MKL.tar.gz RevoMath rstudio.deb
+sudo rm -rf MRO.deb MKL.tar.gz RevoMath rstudio.deb
 
 # # R Profile
 cp ./.Rprofile ~/ # needed to hard code CRAN repo to be used
