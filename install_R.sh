@@ -38,7 +38,7 @@
 ## Microsoft R Open (RRO)
 # the enhanced distribution of R from Revolution Analytics.
 # source: http://mran.revolutionanalytics.com/download/#download
-
+#################################################################
 dpkg -l make gcc gfortran g++ # to check for packages before intalling
 
 sudo apt-get install --yes make gcc gfortran g++ 
@@ -54,6 +54,7 @@ cd ~/Downloads
 
 ## RStudio
 # https://www.rstudio.com/products/rstudio/download/
+####################################################
 sudo apt-get install --yes libjpeg62
 wget -O rstudio.deb https://download1.rstudio.org/rstudio-0.99.896-amd64.deb
 sudo dpkg -i rstudio.deb
@@ -64,4 +65,4 @@ sudo rm -rf MRO.deb MKL.tar.gz RevoMath rstudio.deb
 # # R Profile
 cp ./.Rprofile ~/ # needed to hard code CRAN repo to be used
 cd ~/Downloads/ucs
-# Rscript r-customize.R # depends on R
+./r-customize.R # depends on R
