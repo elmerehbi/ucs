@@ -45,7 +45,7 @@ sudo ./install_R.sh
 
   - To **install R packages only** (this is already done if you're installing R as instructed above.)
 ```S
-Rscript r-customize.R
+./r-customize.R # has an Rscript shebang!
 ```
 
 #### Rprofile
