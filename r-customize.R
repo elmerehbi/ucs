@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 ## For some reason Rscript doesn't run the lines in order. It keeps jumping from
 # oen package to another.
 ####################################
@@ -15,12 +16,12 @@
 ## Basic packages
 #################
 # install.packages("devtools")
+install.packages("checkpoint")
 library(devtools) # to install from source (eg; github)
 # Packrat - dependency management system for R
 if (!require("devtools")) install.packages("devtools")
 	devtools::install_github("rstudio/packrat")
 install.packages("downloader")
-install.packages("checkpoint")
 install.packages("rJava")
 install.packages("xlsxjars")
 install.packages("xlsx")
@@ -78,6 +79,8 @@ install_from_swirl("Statistical Inference") # This intermediate to advanced leve
 
 # # Visualization
 # ###############
+install.packages("viridis") # viridis color map
+# cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
 install.packages("manipulate") # easy interactive plots
 install.packages("quadprog") # dependancy for directlabels
 install.packages("directlabels")
@@ -105,6 +108,10 @@ install_github('rstudio/shinyapps')
 # ShinyDashboard - makes it easy to use shiny to create dashboards
 # https://rstudio.github.io/shinydashboard/
 install.packages("shinydashboard")
+
+# flexdashboard - Easy interactive dashboards for R
+# rstudio.github.io/flexdashboard/
+devtools::install_github("rstudio/flexdashboard")
 
 # Radiant - interface for BI in R based on Shiny
 install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
@@ -162,34 +169,41 @@ install.packages("rasterVis")
 # Connections
 #############
 
-# API's
+## API's
 install.packages("streamR") # Access to Twitter Streaming API via R # github: https://github.com/pablobarbera/streamR
 install.packages("Rfacebook") # provides an interface to the Facebook API
+install.packages("GAR") # Google Analytics R
 
-# Connect to Databases
+## Connect to Databases
 install.packages("DBI") # database interface (DBI) definition for communication between R and relational database management systems
 install.packages("RMySQL") # DBI-compliant Interface to MySQL and MariaDB Databases
 install.packages("dbConnect") # Provides a graphical user interface to connect with databases that use MySQL
 # install.packages("rredis") # connection to Redis
 
-# Data scources
+## Data scources
 install.packages("Quandl")
 install.packages("WDI") #github.com/vincentarelbundock/WDI
 
-# Signal Processing & Time Series Analysis
+## Signal Processing & Time Series Analysis
 install.packages("signal") # Signal Processing
 install.packages("TSA") # Time Series Analysis + Periodograms
 
-# AnomalyDetection - detect anomalies which is robust, from a statistical standpoint, in the presence of seasonality and an underlying trend
+## AnomalyDetection - detect anomalies which is robust, from a statistical standpoint, in the presence of seasonality and an underlying trend
 # https://github.com/twitter/AnomalyDetection
 devtools::install_github("twitter/AnomalyDetection")
 
 # # Interperability with other languages
 # ######################################
 
-# Matlab
+## Matlab
 install.packages("R.matlab")
 install_github("schmidtchristoph/reach/reach") # dependency: R.matlab
+# ######################################
+
+# ## Financial
+# install.packages("PerformanceAnalytics")
+# install.packages("zoo")
+# install.packages("tseries") 
 
 # # Medical packages
 # ##################
