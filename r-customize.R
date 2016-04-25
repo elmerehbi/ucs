@@ -15,9 +15,9 @@
 
 # ## Basic packages
 # #################
-# # install.packages("devtools" # install CRAN's devtools)
-# devtools::install_github("hadley/devtools") # install development version
-# if (!require("devtools")) install.packages("devtools")
+install.packages("devtools") # install CRAN's devtools)
+devtools::install_github("hadley/devtools") # install development version
+if (!require("devtools")) install.packages("devtools")
 library(devtools) # to install from source (eg; github)
 install.packages("checkpoint")
 install.packages("packrat") # dependency management system for R
