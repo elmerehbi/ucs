@@ -4,7 +4,10 @@
 # You may replace this profile before or after installtion
 # & customization.
 
-r <- getOption("repos")
-r["CRAN"] <- "http://cran.us.r-project.org"
-options(repos = r)
-rm(r)
+.First <- function() {
+    options(
+    repos = c(CRAN = "https://cran.rstudio.com/"),
+    browserNLdisabled = TRUE,
+    deparse.max.lines = 2), 
+    unzip = 'internal'
+}
