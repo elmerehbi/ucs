@@ -48,7 +48,7 @@ sudo ./install_R.sh
 Rscript r-customize.R
 ```
 
-### Rprofile
+#### Rprofile
 The `install_R.sh` script puts `.Rprofile` in your home directory. It is required for installation purposes (to hardcode a CRAN mirror). You may replace it before or after the installation with a custom one.
 
 ### License
